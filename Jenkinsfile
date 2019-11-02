@@ -12,9 +12,9 @@ pipeline {
            steps{
 
                 sh "docker build -t riteshmaurya/visits:${BUILD_NUMBER} ."
-                sh "docker tag riteshmaurya/visits:${BUILD_NUMBER} riteshmaurya/visits:"
+                // sh "docker tag riteshmaurya/visits:${BUILD_NUMBER} riteshmaurya/visits:"
 
-                sh "docker push riteshmaurya/visits:${tag}" 
+                sh "docker push riteshmaurya/visits:latest" 
             }
      
         }
