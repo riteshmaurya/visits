@@ -1,5 +1,9 @@
 #!/usr/bin/env groovy
 pipeline {
+    environment {
+    registry = "riteshmaurya/visits"
+    registryCredential = ‘dockerhub’
+  }
     agent { dockerfile true }
     stages {
         stage('Test') {
