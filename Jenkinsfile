@@ -12,14 +12,17 @@ pipeline {
             }
         }
         stage('Upload to docker'){
-                // tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMdd"}.${BUILDS_TODAY}')
-           steps{
-
+            withDockerRegistry([credentialsId: "dockerhub", url: ""]){
                 sh "docker build -t riteshmaurya/visits:${BUILD_NUMBER} ."
                 // sh "docker tag riteshmaurya/visits:${BUILD_NUMBER} riteshmaurya/visits:"
 
                 sh "docker push riteshmaurya/visits:latest" 
             }
+                // tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMdd"}.${BUILDS_TODAY}')
+        //    steps{
+
+
+        //     }
      
         }
     }
