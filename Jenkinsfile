@@ -8,8 +8,8 @@ pipeline {
             }
         }
         stage('Upload to docker'){
-            steps{
-                tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMdd"}.${BUILDS_TODAY}')
+                // tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMdd"}.${BUILDS_TODAY}')
+           steps{
 
                 sh "docker build -t riteshmaurya/visits:${BUILD_NUMBER} ."
                 sh "docker tag riteshmaurya/visits:${BUILD_NUMBER} riteshmaurya/visits:"
