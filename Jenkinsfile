@@ -18,6 +18,7 @@ pipeline {
 
                 sh "docker push riteshmaurya/visits:latest" 
             }
+        }
                 // tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMdd"}.${BUILDS_TODAY}')
         //    steps{
 
