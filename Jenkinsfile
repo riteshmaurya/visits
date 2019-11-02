@@ -12,7 +12,7 @@ pipeline {
                 tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED, "yyyyMMdd"}.${BUILDS_TODAY}')
 
                 sh "docker build -t riteshmaurya/visits:${BUILD_NUMBER} ."
-                ah "docker tag riteshmaurya/visits:${BUILD_NUMBER} riteshmaurya/visits:"
+                sh "docker tag riteshmaurya/visits:${BUILD_NUMBER} riteshmaurya/visits:"
 
                 sh "docker push riteshmaurya/visits:${tag}" 
             }
