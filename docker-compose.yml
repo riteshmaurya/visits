@@ -4,6 +4,10 @@ services:
     image: 'redis'
   node-app:
     restart: always
-    build: .
+    build:
+      context: .
     ports:
-      - "4001:8081"  
+      - "4001:8081"
+    volumes: 
+      - /app/node_modules
+      - .:/app 
