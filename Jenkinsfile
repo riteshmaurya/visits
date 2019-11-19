@@ -6,14 +6,14 @@ pipeline {
   }
   agent {
     dockerfile {
-      args "-v /var/run/docker.sock:/var/run/docker.sock"
+      args "-v /var/run/docker.sock:/var/run/docker.sock --privileged"
     }
     }    
     stages {
         stage('Test') {
             steps {
                 sh 'node --version'
-                sh "ls -al /var/run"
+                sh "ls -al /var/run/"
             }
         }
         stage('Upload to docker'){
