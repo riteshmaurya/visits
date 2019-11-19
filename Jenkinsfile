@@ -6,7 +6,7 @@ pipeline {
   }
   agent {
     dockerfile {
-      additionalBuildArgs "-v /var/run/docker.sock:/var/run/docker.sock"
+      "-v /var/run/docker.sock:/var/run/docker.sock"
     }
     }    
     stages {
