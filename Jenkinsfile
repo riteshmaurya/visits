@@ -14,6 +14,7 @@ pipeline {
         stage('Upload to docker'){
             steps{
             withDockerRegistry([credentialsId: "dockerhub", url: ""]){
+                sh "ls -al /var/run"
                 sh "docker build -t riteshmaurya/visits:${BUILD_NUMBER} ."
 
                 sh "docker push riteshmaurya/visits:latest" 
