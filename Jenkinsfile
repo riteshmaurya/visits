@@ -13,6 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'node --version'
+                sh "ls -al /var/run"
             }
         }
         stage('Upload to docker'){
