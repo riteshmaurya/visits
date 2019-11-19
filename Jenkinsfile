@@ -4,7 +4,9 @@ pipeline {
     registry = "riteshmaurya/visits"
     registryCredential = 'dockerhub'
   }
-    agent { dockerfile true }
+    agent { docker {
+        -v "/var/run/docker.sock:/var/run/docker.sock"
+    }}
     stages {
         stage('Test') {
             steps {
